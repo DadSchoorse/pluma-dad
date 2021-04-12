@@ -4,7 +4,7 @@
 pkgname=pluma-dad
 _pkgname=pluma
 pkgver=1.24.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A powerful text editor for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
@@ -16,14 +16,17 @@ groups=('mate-extra')
 conflicts=('pluma-gtk3' $_pkgname)
 replaces=('pluma-gtk3' $_pkgname)
 source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${_pkgname}-${pkgver}.tar.xz"
-		"newline.patch")
+		"newline.patch"
+		"3-space.patch")
 sha512sums=('0cfd6a035fc95993dce3e556c49641e799888f20159b29f2c0712c54ee772aa6df1ce755f329414c94efdb2cb3819ce633b92e6559b0c8cb064dab3c74729ab3'
-            '01ffc93510d76cdad5227c59a3825e6a8b1f627ae35417c0fca467f77d626e341b2be7a4b3c5fbf594c6c187bf831223259a52c667d8735506a284436057e4b5')
+            '01ffc93510d76cdad5227c59a3825e6a8b1f627ae35417c0fca467f77d626e341b2be7a4b3c5fbf594c6c187bf831223259a52c667d8735506a284436057e4b5'
+            'c3db396212d95cc8c7056f870cc52f6174650eb1a328d61b1928827111649dc58ee141d033adb6a1b860d1c7e206d1a679e2d0fd3dc4f34e048e1e343d09fd6e')
 
 build() {
     	cd "${_pkgname}-${pkgver}"
 
     	patch -Np1 < "$srcdir"/newline.patch
+    	patch -Np1 < "$srcdir"/3-space.patch
 
     	./autogen.sh
     	PYTHON=/usr/bin/python ./configure \
