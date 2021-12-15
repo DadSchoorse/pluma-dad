@@ -3,13 +3,13 @@
 # Frogged by Georg Lehmann
 pkgname=pluma-dad
 _pkgname=pluma
-pkgver=1.24.1
-pkgrel=2
+pkgver=1.26.0
+pkgrel=1
 pkgdesc="A powerful text editor for MATE"
 url="https://mate-desktop.org"
 arch=('x86_64')
 license=('GPL')
-depends=('iso-codes' 'mate-desktop' 'zenity' 'gtksourceview3' 'libpeas' 'python' 'gettext')
+depends=('iso-codes' 'mate-desktop' 'zenity' 'gtksourceview4' 'libpeas' 'python' 'gettext')
 makedepends=('itstool' 'gobject-introspection' 'python' 'mate-common' 'yelp-tools' 'autoconf-archive')
 optdepends=('python-gobject: to use the python plugins')
 groups=('mate-extra')
@@ -18,9 +18,9 @@ replaces=('pluma-gtk3' $_pkgname)
 source=("https://pub.mate-desktop.org/releases/${pkgver%.*}/${_pkgname}-${pkgver}.tar.xz"
 		"newline.patch"
 		"3-space.patch")
-sha512sums=('0cfd6a035fc95993dce3e556c49641e799888f20159b29f2c0712c54ee772aa6df1ce755f329414c94efdb2cb3819ce633b92e6559b0c8cb064dab3c74729ab3'
-            '01ffc93510d76cdad5227c59a3825e6a8b1f627ae35417c0fca467f77d626e341b2be7a4b3c5fbf594c6c187bf831223259a52c667d8735506a284436057e4b5'
-            'c3db396212d95cc8c7056f870cc52f6174650eb1a328d61b1928827111649dc58ee141d033adb6a1b860d1c7e206d1a679e2d0fd3dc4f34e048e1e343d09fd6e')
+sha512sums=('a6c0cee7110f4863e44af51b19bb528f0f3570eab8db98038152bf142eedde97ac13b896deff7051b941a0f43c6fe14e316a97eba40fe5d4854d76038450245f'
+            'f2a95f72f4030b354e0267857dcd27e0f4717b7facb8bdcecdb399402b7ee6d89c0c76468328a001eecdb2620ad86ac828e1dd62c89a9f60aec55291523aa5d3'
+            '48d2d4470706b812fef6d65490eb9f9147685c4b7f1648b8e2667eb54453d7d7ae07b95078b6002dc6a3b50600fd9a55c13abad6adce90fef16638630f9db0c7')
 
 build() {
     	cd "${_pkgname}-${pkgver}"

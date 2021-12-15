@@ -1,4 +1,4 @@
-From 8ac731b7542ec0ecf9964818ab003e9d227cab24 Mon Sep 17 00:00:00 2001
+From 83f4c0e385bc729eb58dfd35cdfe088162fa1189 Mon Sep 17 00:00:00 2001
 From: Alexander Schlarb <alexander@ninetailed.ninja>
 Date: Tue, 18 Dec 2018 14:26:22 +0100
 Subject: [PATCH] Don't add and trim trailing newlines from documents
@@ -9,10 +9,10 @@ Subject: [PATCH] Don't add and trim trailing newlines from documents
  2 files changed, 54 deletions(-)
 
 diff --git a/pluma/pluma-document-input-stream.c b/pluma/pluma-document-input-stream.c
-index 82e60acd..1a894637 100644
+index 8bae356..acd1962 100644
 --- a/pluma/pluma-document-input-stream.c
 +++ b/pluma/pluma-document-input-stream.c
-@@ -45,7 +45,6 @@ struct _PlumaDocumentInputStreamPrivate
+@@ -44,7 +44,6 @@ struct _PlumaDocumentInputStreamPrivate
  
  	PlumaDocumentNewlineType newline_type;
  
@@ -20,7 +20,7 @@ index 82e60acd..1a894637 100644
  	guint is_initialized : 1;
  };
  
-@@ -437,27 +436,6 @@ pluma_document_input_stream_read (GInputStream  *stream,
+@@ -434,27 +433,6 @@ pluma_document_input_stream_read (GInputStream  *stream,
  					  &iter,
  					  dstream->priv->pos);
  
@@ -48,7 +48,7 @@ index 82e60acd..1a894637 100644
  	return read;
  }
  
-@@ -468,8 +446,6 @@ pluma_document_input_stream_close (GInputStream  *stream,
+@@ -465,8 +443,6 @@ pluma_document_input_stream_close (GInputStream  *stream,
  {
  	PlumaDocumentInputStream *dstream = PLUMA_DOCUMENT_INPUT_STREAM (stream);
  
@@ -58,10 +58,10 @@ index 82e60acd..1a894637 100644
  	{
  		gtk_text_buffer_delete_mark (dstream->priv->buffer, dstream->priv->pos);
 diff --git a/pluma/pluma-document-output-stream.c b/pluma/pluma-document-output-stream.c
-index ae9e66bf..2aae8102 100644
+index f7ecf5a..bfdca0f 100644
 --- a/pluma/pluma-document-output-stream.c
 +++ b/pluma/pluma-document-output-stream.c
-@@ -244,39 +244,9 @@ pluma_document_output_stream_detect_newline_type (PlumaDocumentOutputStream *str
+@@ -239,39 +239,9 @@ pluma_document_output_stream_detect_newline_type (PlumaDocumentOutputStream *str
  	return type;
  }
  
@@ -101,3 +101,6 @@ index ae9e66bf..2aae8102 100644
  	gtk_text_buffer_set_modified (GTK_TEXT_BUFFER (stream->priv->doc),
  				      FALSE);
  
+-- 
+2.34.1
+
