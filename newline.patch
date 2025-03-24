@@ -1,4 +1,4 @@
-From 83f4c0e385bc729eb58dfd35cdfe088162fa1189 Mon Sep 17 00:00:00 2001
+From 066ad266e33b9a81e0c5132bf6c14f59ffbcf669 Mon Sep 17 00:00:00 2001
 From: Alexander Schlarb <alexander@ninetailed.ninja>
 Date: Tue, 18 Dec 2018 14:26:22 +0100
 Subject: [PATCH] Don't add and trim trailing newlines from documents
@@ -102,5 +102,5 @@ index f7ecf5a..bfdca0f 100644
  				      FALSE);
  
 -- 
-2.34.1
+2.49.0
 

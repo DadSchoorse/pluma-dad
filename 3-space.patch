@@ -1,4 +1,4 @@
-From c8a7455058d4612759b8be77a66a738d8f2e50ea Mon Sep 17 00:00:00 2001
+From 079383e9e713378990afca2ec40bd483b99afb84 Mon Sep 17 00:00:00 2001
 From: Georg Lehmann <dadschoorse@gmail.com>
 Date: Mon, 12 Apr 2021 16:55:52 +0200
 Subject: [PATCH] 3 space tab for mesa
@@ -8,10 +8,10 @@ Subject: [PATCH] 3 space tab for mesa
  1 file changed, 1 insertion(+)
 
 diff --git a/pluma/pluma-window.c b/pluma/pluma-window.c
-index 1ca50ec..23f16a6 100644
+index f141ccb..6209eb0 100644
 --- a/pluma/pluma-window.c
 +++ b/pluma/pluma-window.c
-@@ -1916,6 +1916,7 @@ fill_tab_width_combo (PlumaWindow *window)
+@@ -1921,6 +1921,7 @@ fill_tab_width_combo (PlumaWindow *window)
  {
      static TabWidthDefinition defs[] = {
          {"2", 2},
@@ -20,5 +20,5 @@ index 1ca50ec..23f16a6 100644
          {"8", 8},
          {"", 0}, /* custom size */
 -- 
-2.34.1
+2.49.0
 
